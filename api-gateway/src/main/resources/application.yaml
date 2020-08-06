@@ -15,22 +15,21 @@ eureka:
     fetch-registry: true
     serviceUrl:
       defaultZone: ${EUREKA_URL:http://localhost:8761}/eureka/
-#  instance:
-#    status-page-url-path: ${server.servletPath}/info
-#    health-check-url-path: ${server.servletPath}/health
-#    instance-id:
 
-#zuul:
-#  ignored-services: "*"
-#  prefix: /api
-#  routes:
-#    service-api:
-#      path: /service-api/**
-#      serviceId: service-api
-#      stripPrefix: false
-#  ribbonIsolationStrategy: THREAD
-#  threadPool:
-#    useSeparateThreadPools: true
+zuul:
+  ignored-services: "*"
+  prefix: /api
+  routes:
+    service-api:
+      path: /service-api/**
+      stripPrefix: true
+  ribbonIsolationStrategy: THREAD
+  threadPool:
+    useSeparateThreadPools: true
+
+filters:
+  auth-filter:
+    enabled: true
 
 #service-api:
 #  ribbon:
@@ -50,3 +49,7 @@ eureka:
 #    service-2:
 #      path: /service-2/**
 #      url: http://localhost:10002
+
+#logging:
+#  level:
+#    root: debug
