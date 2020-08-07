@@ -1,4 +1,4 @@
-package com.dkitec.jqgridtest.common;
+package com.dkitec.legacy.common;
 
 import com.netflix.appinfo.ApplicationInfoManager;
 import com.netflix.appinfo.DataCenterInfo;

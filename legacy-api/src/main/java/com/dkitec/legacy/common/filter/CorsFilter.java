@@ -1,4 +1,4 @@
-package com.dkitec.jqgridtest.common.filter;
+package com.dkitec.legacy.common.filter;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
