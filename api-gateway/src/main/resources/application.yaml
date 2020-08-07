@@ -21,7 +21,10 @@ zuul:
   prefix: /api
   routes:
     service-api:
-      path: /service-api/**
+      path: /service/**
+      stripPrefix: true
+    legacy-api:
+      path: /legacy/**
       stripPrefix: true
   ribbonIsolationStrategy: THREAD
   threadPool:

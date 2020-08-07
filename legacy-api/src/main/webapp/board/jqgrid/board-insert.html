@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../libs/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../../libs/css/jquery-ui.theme.css">
+    <link rel="stylesheet" type="text/css" href="../../libs/css/ui.jqgrid.css">
+    <link rel="stylesheet" type="text/css" href="board-insert.css">
+
+    <script src="../../libs/jquery-3.5.1.min.js"></script>
+    <script src="../../libs/js/grid.locale-kr.js"></script>
+    <script src="../../libs/js/jquery.jqGrid.min.js"></script>
+    <script src="board-insert.js"></script>
+</head>
+<body>
+    <h1>글 생성!</h1>
+    <table class="board-create-table">
+        <thead></thead>
+        <tbody>
+        <tr>
+            <td>제목</td>
+            <td><input class="board-create-input" type="text" id="boardTitle" name="boardTitle"></td>
+        </tr>
+        <tr>
+            <td>본문</td>
+            <td><textarea class="board-create-area" cols="50" rows="3" id="boardDes" name="boardDes"></textarea></td>
+        </tr>
+        <tr>
+            <td>이미지</td>
+            <td><input class="board-create-input" type="file" id="boardImage" name="boardImage"></textarea></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="create-button-wrapper">
+        <button onclick="createBoard()">등록</button>
+    </div>
+</body>
+</html>

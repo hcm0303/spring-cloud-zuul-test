@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="true" scan="true" scanPeriod="30 seconds">
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--            <charset>UTF-8</charset>-->
+            <pattern>[POT] %d{MM-dd HH:mm:ss} [%35.35logger.%15.15M]  %highlight(%-5p) %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${user.home}/logs/onm.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <!--            <charset>UTF-8</charset>-->
+            <pattern>[POT] %d{MM-dd HH:mm:ss} [%35.35logger.%15.15M]  %highlight(%-5p) %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <logger level="error" name="org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor"/>
+    <logger level="error" name="org.springframework.web.servlet.DispatcherServlet"/>
+    <logger level="error" name="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <logger level="error" name="org.springframework.beans.factory.support.DefaultListableBeanFactory"/>
+    <logger level="error" name="org.springframework.web.servlet.mvc.WebContentInterceptor"/>
+    <logger level="error" name="org.springframework.web.cors.DefaultCorsProcessor"/>
+    <logger level="error" name="org.mybatis.spring.SqlSessionUtils"/>
+    <logger level="error" name="org.springframework.jdbc.datasource.DataSourceUtils"/>
+    <logger level="error" name="org.mybatis.spring.transaction.SpringManagedTransaction"/>
+
+</configuration>

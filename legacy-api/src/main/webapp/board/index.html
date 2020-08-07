@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="index.css" rel="stylesheet">
+    <script src="../libs/jquery-3.5.1.min.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="login-wrapper">
+        <h1 class="login-title">login</h1>
+        <fieldset>
+            <input id="userId" class="login-input" type="text" placeholder="ID">
+            <input id="userPw" class="login-input" type="password" placeholder="Password" onkeypress="if(event.keyCode == 13) {doLogin()}">
+            <button class="login-button" onclick="doLogin()">Login</button>
+        </fieldset>
+    </div>
+</body>
+</html>

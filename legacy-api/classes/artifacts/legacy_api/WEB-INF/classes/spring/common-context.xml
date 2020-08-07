@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!---->
+    <mvc:annotation-driven />
+    <!---->
+    <context:component-scan base-package="com.dkitec" />
+    <!--default-servlet을 쓰기 위해서-->
+    <mvc:default-servlet-handler/>
+
+    <!-- RestTemplate 쓰기 위해서 빈 등록 -->
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+        <constructor-arg>
+            <bean class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory">
+                <!--readTimeout: 접근에 성공하였으나 수행하는 시간이 너무 길어 제대로 응답을 못할 때-->
+                <property name="readTimeout" value="5000" />
+                <!--connectTimeout: 접근을 시도하는 시간제한-->
+                <property name="connectTimeout" value="3000" />
+            </bean>
+        </constructor-arg>
+    </bean>
+
+    <!--Multipart를 쓰기 위해서-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"></property>
+    </bean>
+
+</beans>
